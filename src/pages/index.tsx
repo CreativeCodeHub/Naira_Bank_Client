@@ -20,7 +20,7 @@ const router = createBrowserRouter(
   )
 );
 
-function Pages() {
+function Pages(): JSX.Element {
   return (
     <Suspense fallback={<h1>Loading...</h1>}>
       <RouterProvider router={router} />
