@@ -7,12 +7,13 @@ const queryClient = new QueryClient();
 
 export default function App(): JSX.Element {
   return (
-    <ConfigProvider>
-      <GlobalStyle>
+    <>
+      <GlobalStyle />
+      <ConfigProvider>
         <QueryClientProvider client={queryClient}>
           <Pages />
         </QueryClientProvider>
-      </GlobalStyle>
-    </ConfigProvider>
+      </ConfigProvider>
+    </>
   );
 }
