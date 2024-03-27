@@ -8,6 +8,7 @@ import {
 
 // components
 import Layout from "../layout";
+import SignUp from "./sign-up";
 
 const Home = lazy(() => import("./home"));
 
@@ -16,7 +17,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
-      {/* add more routes ass required */}
+      <Route path="/sign-up" element={<SignUp />} />
     </Route>
   )
 );
