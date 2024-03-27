@@ -33,5 +33,6 @@ module.exports = {
     "react/react-in-jsx-scope": 0,
     "prettier/prettier": ["error", { endOfLine: "auto" }],
     "import/prefer-default-export": 0,
+    "react/jsx-props-no-spreading": 0,
   },
 };

@@ -51,13 +51,14 @@ export const SignUpFormBody = styled.section`
 export const InputFieldContainer = styled.section`
   width: 100%;
   display: flex;
-  row-gap: 0.2rem;
+  row-gap: 1.2rem;
   flex-direction: column;
 `;
 
 export const SubmitButtonContainer = styled.div`
   width: 100%;
-  padding: 1rem;
   display: flex;
+  padding: 2rem 0;
+  row-gap: 1rem;
   flex-direction: column;
 `;

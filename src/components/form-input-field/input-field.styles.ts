@@ -7,18 +7,20 @@ export const InputContainer = styled.div`
   flex-direction: column;
 `;
 
-export const InputFieldSet = styled.fieldset`
+export const InputFieldSet = styled.fieldset<{ $isError: boolean }>`
   width: 100%;
-  border-radius: 15px;
-  border: 1px solid black;
+  border-radius: 12px;
+  padding: 0 0 1rem 1rem;
+  border: ${({ $isError }) => ($isError ? "1px solid red" : "1px solid black")};
 `;
 
 export const InputFieldLegend = styled.legend`
   color: black;
   font-size: 18px;
   font-weight: 700;
-  margin-left: 20px;
+  margin-left: 0.2rem;
   width: fit-content;
+  padding: 0 0.5rem;
 `;
 
 export const InputField = styled.input`
@@ -27,13 +29,13 @@ export const InputField = styled.input`
   border: none;
   outline: none;
   font-weight: 500;
-  padding: 0.5rem 1.5rem;
+  padding: 0 0.5rem;
   background: transparent;
 `;
 
 export const ErrorMessage = styled.p`
   color: red;
-  padding: 5px;
+  padding: 0.15rem;
   font-size: 12px;
   font-weight: 600;
 `;
