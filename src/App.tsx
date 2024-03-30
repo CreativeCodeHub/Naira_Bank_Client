@@ -1,11 +1,17 @@
-import MyComponent from "./components/Login"
+
+import LoginForm from './components/Login';
+
 function App() {
+  const handleForgotPassword = () => {
+    console.log("Forgot Password clicked");
+  };
 
   return (
-   <section className='body'>
-    <MyComponent />
-   </section>
-  )
+    <section className='body'>
+      <LoginForm onForgotPassword={handleForgotPassword} />
+    </section>
+  );
 }
 
-export default App
+export default App;
+
