@@ -4,7 +4,7 @@ import googleLogo from '../assets/Google.svg'
 import facebookLogo from '../assets/facebook.svg'
 const { Title, Text } = Typography;
 
-interface LoginFormProps {
+Type LoginFormProps {
   onForgotPassword: () => void;
 }
 
