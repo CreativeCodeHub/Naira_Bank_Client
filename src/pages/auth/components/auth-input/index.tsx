@@ -4,6 +4,7 @@ import {
   Path,
   UseFormRegister,
 } from "react-hook-form";
+import { FormEvent, useLayoutEffect, useState } from "react";
 
 import {
   ErrorMessage,
@@ -12,7 +13,7 @@ import {
   InputFieldLegend,
   InputField,
 } from "./input-field.styles";
-import { FieldNames } from "../../types/auth.types";
+import { FieldNames } from "../../../../types/auth.types";
 
 type FormFieldType<T extends FieldValues> = {
   type: string;
@@ -28,15 +29,28 @@ function FormField<T extends FieldValues>({
   label,
   errors,
   register,
-}: FormFieldType<T>) {
+}: FormFieldType<T>): JSX.Element {
   const isError = !!errors[name]?.message;
   const errorMessage = errors[name] && `${errors[name]?.message} `;
+
+  const [cachedValue, setCachedValue] = useState<string>("");
+
+  useLayoutEffect(() => setCachedValue(localStorage[name]), []);
+
+  const handleCaching = (event: FormEvent<HTMLInputElement>): void => {
+    localStorage[name] = event.currentTarget.value;
+  };
 
   return (
     <InputContainer>
       <InputFieldSet $isError={isError}>
         <InputFieldLegend>{label}</InputFieldLegend>
-        <InputField type={type || "text"} {...register(name as Path<T>)} />
+        <InputField
+          type={type || "text"}
+          onInput={handleCaching}
+          defaultValue={cachedValue}
+          {...register(name as Path<T>)}
+        />
       </InputFieldSet>
       {isError && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </InputContainer>

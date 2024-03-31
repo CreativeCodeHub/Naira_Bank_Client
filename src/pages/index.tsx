@@ -8,7 +8,7 @@ import {
 
 // components
 import Layout from "../layout";
-import SignUp from "./sign-up";
+import SignUp from "./auth/sign-up";
 
 const Home = lazy(() => import("./home"));
 

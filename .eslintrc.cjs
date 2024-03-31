@@ -34,5 +34,6 @@ module.exports = {
     "prettier/prettier": ["error", { endOfLine: "auto" }],
     "import/prefer-default-export": 0,
     "react/jsx-props-no-spreading": 0,
+    "react-hooks/exhaustive-deps": 0,
   },
 };
